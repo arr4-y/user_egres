@@ -4,7 +4,7 @@
 const defaultEvents = [
   { id: 1, name: "Evento 1", date: "2025-01-01" },
   { id: 2, name: "Evento 2", date: "2025-02-05" },
-  { id: 3, name: "Evento 3", date: "2025-03-10" }
+  { id: 3, name: "Evento 3", date: "2025-03-45" }
 ];
 
 // Simulación de la función fetchEvents
