@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -15,7 +16,36 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}>{children}</body>
+      <body className={`${poppins.className} bg-gray-50 font-sans`}>
+        {/* Header */}
+        <header className="flex justify-between items-center p-6 bg-white shadow-md">
+          <Link href="/" className="text-orange-600 text-2xl font-bold">
+            UNFV
+          </Link>
+          <nav className="space-x-4">
+            <Link href="/nosotros" className="text-gray-600">Sobre nosotros</Link>
+            <Link href="#" className="text-gray-600">Noticias</Link>
+            <Link href="#" className="text-gray-600">Convenios</Link>
+            <Link href="#" className="text-gray-600">Nuestros egresados</Link>
+            <Link href="#" className="text-gray-600">Bolsa de trabajo</Link>
+            <Link href="/login"  className="bg-orange-600 text-white px-4 py-2 rounded-md"> 
+              Iniciar sesión
+            </Link> 
+
+          </nav>
+        </header>
+
+        {/* Main Content */}
+        <main className="p-6 space-y-12">
+          {children}
+        </main>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white text-center p-6">
+          <p>Universidad Nacional Federico Villarreal</p>
+          <p>Dirección y otros datos de contacto aquí</p>
+        </footer>
+      </body>
     </html>
   );
 }
