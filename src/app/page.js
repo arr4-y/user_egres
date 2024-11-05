@@ -89,7 +89,7 @@ export default function LandingPage() {
 
 
       {/* Enlaces de Interés */}
-      <section className="mt-8">
+      <section className="max-w-5xl mx-auto p-4">
         <h2 className="text-2xl font-bold mb-6 text-center text-orange-600">
           Enlaces de interés
         </h2>

@@ -1,6 +1,6 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import Header from "@/shared/navigation/nav"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,36 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.className} bg-gray-50 font-sans`}>
         {/* Header */}
-        <header className="flex justify-between items-center px-8 py-4 bg-white shadow-md">
-          {/* Logo */}
-          <Link href="/" className="text-[#FE6A00] text-2xl font-bold">
-            UNFV
-          </Link>
-          
-          {/* Navigation Links */}
-          <nav className="flex items-center space-x-6">
-            <Link href="/nosotros" className="text-gris-o1 hover:text-main transition duration-300">
-              Sobre nosotros
-            </Link>
-            <Link href="/noticias" className="text-gris-o1 hover:text-main transition duration-300">
-              Noticias
-            </Link>
-            <Link href="/convenios" className="text-gris-o1 hover:text-main transition duration-300">
-              Convenios
-            </Link>
-            <Link href="/egresados" className="text-gris-o1 hover:text-main transition duration-300">
-              Nuestros egresados
-            </Link>
-            <Link href="/bolsaTrabajo" className="text-gris-o1 hover:text-main transition duration-300">
-              Bolsa de trabajo
-            </Link>
-            {/* Login Button */}
-            <Link href="/login" className="block bg-[#FE6A00] text-white px-4 py-2 rounded-md shadow-sm text-center hover:bg-orange-500 transition duration-300">
-              Iniciar sesión
-            </Link>
-          </nav>
-        </header>
-
+        <Header/>
         {/* Main Content */}
         <main className="p-6 space-y-12">
           {children}
