@@ -38,7 +38,7 @@ export default function LoginPage() {
           <h2 className="text-3xl font-bold text-[#FE6A00] mb-6 text-center">Acceder</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Correo de usuario</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">Correo Institucional</label>
               <input
                 id="email"
                 type="email"
