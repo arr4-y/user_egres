@@ -1,8 +1,12 @@
 // eventsLanding.js
 "use client"; // Indica que este es un componente de cliente
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { fetchEvents } from "./api"; // Ya no necesitamos importar deleteEvent
+import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa"; // Import Font Awesome icons
+import LoadingSpinner from "@/shared/presentation/loading"
+import Image from 'next/image';
+
 
 export default function EventsSection() {
   const [events, setEvents] = useState([]);
@@ -22,6 +26,11 @@ export default function EventsSection() {
         {/* Columna de Eventos */}
         <div>
           <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Próximos Eventos</h2>
+          <p className="text-gray-600 text-sm mb-4">
+            Como parte de nuestro compromiso institucional y con el egresado. Presentamos los siguientes eventos disponibles:
+          </p>
+        <Suspense fallback={<LoadingSpinner/>}> 
+
           <ul className="space-y-2">
             {events.map((event) => (
               <li
@@ -38,13 +47,40 @@ export default function EventsSection() {
               </li>
             ))}
           </ul>
+        </Suspense>
         </div>
-        {/* Columna con el título de la Universidad */}
-        <div className="flex flex-col justify-center items-center">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-orange-600 text-center">
-            Universidad Nacional <br /> Federico Villarreal
+
+        {/* Columna con el título de la Universidad y Redes Sociales */}
+        <div className="flex flex-col justify-center items-start md:items-center">
+       
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-black">
+            Universidad Nacional
           </h1>
-          <p className="text-gray-400 mt-2 text-center">Social Network</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FE6A00]">
+            Federico Villarreal
+          </h1>
+        
+
+
+          <p className="text-gray-400 mt-2 text-sm md:text-base text-left md:text-center">
+            Social network
+          </p>
+
+          {/* Social Media Icons */}
+          <div className="flex space-x-4 mt-4 justify-center">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-500 hover:text-blue-600">
+              <FaFacebookF size={24} />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-gray-500 hover:text-blue-400">
+              <FaTwitter size={24} />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-gray-500 hover:text-red-600">
+              <FaYoutube size={24} />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-500 hover:text-pink-500">
+              <FaInstagram size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </section>
