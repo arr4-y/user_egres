@@ -28,7 +28,7 @@ export default function Header() {
     };
 
     return (
-        <header className="flex justify-between items-center p-6 bg-white shadow-md w-full">
+        <header className="flex justify-between items-center p-4 bg-white shadow-md w-full">
             <div className="flex items-center gap-4">
                 <Link href="/" className="text-[#FE6A00] text-2xl font-bold">
                     UNFV
