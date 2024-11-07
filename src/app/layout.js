@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/shared/navigation/nav"
+import Header from "@/shared/navigation/nav" 
+import Footer from "@/shared/footer/foot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,10 +26,7 @@ export default function RootLayout({ children }) {
         </main>
  
         {/* Footer */}
-        <footer className="bg-gray-900 text-white text-center p-6">
-          <p>Universidad Nacional Federico Villarreal</p>
-          <p>Dirección y otros datos de contacto aquí</p>
-        </footer>
+        <Footer/>
       </body>
     </html>
   );
